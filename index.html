@@ -67,16 +67,20 @@
                     </p>
 
                     <div>
-                        <img
-                            srcset="
-                                images/majorca-beach-square-s.jpg      404w,
-                                images/majorca-beach-vertical-m.jpg    920w,
-                                images/majorca-beach-horizontal-l.jpg 1280w
-                            "
-                            sizes="(max-width: 919px) 404px, (max-width: 1279px) 920px, 1280px"
-                            src="images/majorca-beach-horizontal-l.jpg"
-                            alt="Majorca beach square"
-                        />
+                        <picture>
+                            <source
+                                media="(max-width: 919px)"
+                                srcset="images/majorca-beach-square-s.jpg"
+                            />
+                            <source
+                                media="(max-width: 1279px)"
+                                srcset="images/majorca-beach-vertical-m.jpg"
+                            />
+                            <img
+                                src="images/majorca-beach-horizontal-l.jpg"
+                                alt="Majorca beach square"
+                            />
+                        </picture>
 
                         <small
                             >Photo by
@@ -400,103 +404,105 @@
                 <h2>Contact Us</h2>
                 <span id="required">(*required)</span>
 
-                <div>
-                    <label>First Name<span>*</span></label>
-                    <input
-                        type="text"
-                        name="firstName"
-                        id="firstName"
-                        required
-                        autocomplete="on"
-                    />
-                </div>
-                <div>
-                    <label>Last Name<span>*</span></label>
-                    <input
-                        type="text"
-                        name="lastName"
-                        id="lastName"
-                        required
-                        autocomplete="on"
-                    />
-                </div>
-                <div>
-                    <label>Email<span>*</span></label>
-                    <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        required
-                        autocomplete="on"
-                    />
-                </div>
-                <div>
-                    <label>Phone<span>*</span></label>
-                    <input
-                        type="tel"
-                        name="phone"
-                        id="phone"
-                        required
-                        autocomplete="on"
-                    />
-                </div>
-                <fieldset id="preferred-contact">
-                    <legend>Preferred Contact Method<span>*</span></legend>
+                <form action="">
                     <div>
+                        <label>First Name<span>*</span></label>
                         <input
-                            type="radio"
-                            name="contact"
-                            id="emailRadio"
+                            type="text"
+                            name="firstName"
+                            id="firstName"
                             required
+                            autocomplete="on"
                         />
-                        <label>Email</label>
                     </div>
                     <div>
+                        <label>Last Name<span>*</span></label>
                         <input
-                            type="radio"
-                            name="contact"
-                            id="textRadio"
+                            type="text"
+                            name="lastName"
+                            id="lastName"
                             required
+                            autocomplete="on"
                         />
-                        <label>Text</label>
                     </div>
                     <div>
+                        <label>Email<span>*</span></label>
                         <input
-                            type="radio"
-                            name="contact"
-                            id="phoneRadio"
+                            type="email"
+                            name="email"
+                            id="email"
                             required
+                            autocomplete="on"
                         />
-                        <label>Phone</label>
                     </div>
-                </fieldset>
-                <fieldset id="destination">
-                    <legend>Destination<span>*</span></legend>
-                    <select id="select-destination">
-                        <option>Choose</option>
-                        <option>Barcelona</option>
-                        <option>Granada</option>
-                        <option>Ibiza</option>
-                        <option>Madrid</option>
-                        <option>Majorca</option>
-                        <option>Seville</option>
-                        <option>Tenerife</option>
-                        <option>Valencia</option>
-                        <option>Other</option>
-                    </select>
-                </fieldset>
-                <fieldset id="travelTime">
-                    <legend>Travel Time<span>*</span></legend>
-                    <select id="select-travel-time">
-                        <option>Choose</option>
-                        <option>Fall</option>
-                        <option>Winter</option>
-                        <option>Spring</option>
-                        <option>Summer</option>
-                        <option>Flexible</option>
-                    </select>
-                </fieldset>
-                <input type="submit" value="Submit" id="submit" />
+                    <div>
+                        <label>Phone<span>*</span></label>
+                        <input
+                            type="tel"
+                            name="phone"
+                            id="phone"
+                            required
+                            autocomplete="on"
+                        />
+                    </div>
+                    <fieldset id="preferred-contact">
+                        <legend>Preferred Contact Method<span>*</span></legend>
+                        <div>
+                            <input
+                                type="radio"
+                                name="contact"
+                                id="emailRadio"
+                                required
+                            />
+                            <label>Email</label>
+                        </div>
+                        <div>
+                            <input
+                                type="radio"
+                                name="contact"
+                                id="textRadio"
+                                required
+                            />
+                            <label>Text</label>
+                        </div>
+                        <div>
+                            <input
+                                type="radio"
+                                name="contact"
+                                id="phoneRadio"
+                                required
+                            />
+                            <label>Phone</label>
+                        </div>
+                    </fieldset>
+                    <fieldset id="destination">
+                        <legend>Destination<span>*</span></legend>
+                        <select id="select-destination">
+                            <option>Choose</option>
+                            <option>Barcelona</option>
+                            <option>Granada</option>
+                            <option>Ibiza</option>
+                            <option>Madrid</option>
+                            <option>Majorca</option>
+                            <option>Seville</option>
+                            <option>Tenerife</option>
+                            <option>Valencia</option>
+                            <option>Other</option>
+                        </select>
+                    </fieldset>
+                    <fieldset id="travelTime">
+                        <legend>Travel Time<span>*</span></legend>
+                        <select id="select-travel-time">
+                            <option>Choose</option>
+                            <option>Fall</option>
+                            <option>Winter</option>
+                            <option>Spring</option>
+                            <option>Summer</option>
+                            <option>Flexible</option>
+                        </select>
+                    </fieldset>
+                    <input type="submit" value="Submit" id="submit" />
+                </form>
             </section>
 
             <section id="legal">
